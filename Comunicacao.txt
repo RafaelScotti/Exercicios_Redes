@@ -1,0 +1,150 @@
+Comunicação de dados é a troca de dados entre dois dispositivos através de algum meio de transmissão;
+
+1. Cite e explique as principais características para comunicação de dados.
+R:  Entrega (delivery): dados devem ser entregues ao destino correto.
+    Confiabilidade: Dados devem ser entregues corretamente.
+    Tempo de atraso: Dados devem ser entregues em tempo finito.
+
+2. Apresente os componentes de uma rede de comunicação e descreva a função de cada componente.
+R:  2.1: Mensagem: Informação a ser transmitida.
+    2.2: Emissor (sender): dispositivo que envia a Mensagem.
+    2.3: Receptor (Receiver): Dispositivo que recebe a Mensagem.
+    2.4: Meio de transmissão (Transmission medium): caminho fisico pelo qual a Mensagem trafega do Emissor ao Receptor.
+    2.5: Protocolo: Conjunto de regras que controla a comunicação de dados e são acordadas entre dispositivos de comunicação.
+
+3. Diferencie os modos de operação simplex, half-duplex e full-duplex e apresente um exemplo para cada um.
+R:  Simplex: Comunicação unidirecional (teclado, monitores);
+    Half-duplex: Cada estação pode transmitir e receber, mas não ao mesmo tempo (walkie-talk, faixa cidadão);
+    Full-duplex (ou duplex): ambas estações podem transmitir e receber simultaneamente. A capacidade do canal é dividida (rede telefonica);
+
+Redes é o conjunto de dispositivos conectados por links de comunicação.
+
+4. Diferencie os tipos de conexão ponto-a-ponto e multiponto.
+R:  Ponto a ponto: Possui um link dedicado entre dois dispositivos.
+    Multiponto: Mais de dois dispositivos compartilham um unico link.
+
+5. Descreva o funcionamento das topologias de rede: malha, estrela, barramento e anel. Apresente as diferenças entre as topologias em relação a desempenho, confiabilidade, segurança e custo.
+R:  Malha: Cada dispositivo Possui um link dedicado com os demais dispositivos da rede
+        Desempenho: uso dedicado dos links entre pares de nós;
+        Robustez: queda de um link não implica na queda da rede;
+        Segurança: comunicação ocorre somente no link compartilhado entre origem e destino;
+        Custo: utiliza grande quantidade de cabeamento e portas de entrada e saida (dificil instalação, alto custo);
+    Estrela: Cada dispositivo se comunica de forma direta a um controlador (hub) no centro da estrutura, obrigatoriamente.
+        Custo: acessivel e facil instalação;
+        Robustez: se um link falhar, somente ele é afetado;
+        Dependecia do hub -> ponto unico de falha.
+        Utiliza mais cabeamento que as topologias barramento e anel.
+    Barramento: Utiliza um backbone (espinha dorsal) interligando todos os dispositivos através de conexões multiponto.
+        Custo: facil instalação, utiliza menos cabos que outras topologias;
+        O numero de dispositivos é limitado devido a perda de sinal ao longo do backbone;
+        O backbone é o ponto unico de falha, a quebra reflete o sinal e gera ruidos em ambas as direções (dificuldade para isolar falhas);
+    Anel: Cada dispositivo possui uma conexão ponto a ponto com somente dois outros dispositivos do anel.
+        O sinal é passado em uma unica direção por cada dispositivo até chegar no seu destino;
+        Facil instalação e reconfiguração. Adicionar um novo dispositivo requer somente a troca de duas conexões;  
+        Facil isolamento de falhas. Um sinal percorre o anela o tempo todo. Se um dispositivo não receber o sinal por um tempo, ele gera um alarme;
+        Quebra de um link pode desabilitar toda a rede (pode ser utilizado um anel duplo para resolver o problema);
+
+6. Para n dispositivos em uma rede, qual é o número de conexões via cabo necessário em uma topologia de malha, anel, barramento e estrela?
+R:  Malha: n(n-1)/2 links
+    Anel: 
+    Barramento: 
+    Estrela: 
+
+7. Suponha seis dispositivos dispostos segundo a topologia de malha. Quantos cabos seriam necessários? Quantas portas seriam necessárias para cada dispositivo?
+R:  6*(6-1)/2 -> 15 links/cabos. 5 portas E/S
+
+8. Diferencie as categorias de rede PAN, LAN, MAN e WAN e apresente um exemplo para cada categoria.
+R:  PAN: Personal Area Network 
+        Rede de pequeno alcance;
+        Utilizada para comunicação entre computadores, perifericos (bluetooth, infravermelho);
+    LAN: Local Area Network
+        Rede privada;
+        Interliga computadores de uma sala, predio, campus, poucos quilometros;
+    MAN: Metropolitan Area Network
+        Rede projetada para estender por toda uma cidade;
+        Administrada por empresa privada ou publica (RedeComep, MetroPOA, Rede de TV a cabo);
+    WAN: Wide Area Network
+        Grandes distancias (país, continente, mundo);
+        Pode utilizar redes publicas, alugadas ou equipamentos privados;
+        WAN Comutada: Consiste em um conjunto de nós interconectados;
+        WAN Ponto a Ponto: linha alugada conectando um computador ou rede a um provedor de serviços de Internet (ISP);
+
+9. Você tem dois computadores conectados por um hub Ethernet em sua casa. Isso é uma LAN, MAN ou WAN? Justifique sua resposta.
+R:  LAN. É uma rede local, de curto alcance e privada.
+
+10. Qual a diferença entre internet e Internet?
+R:  internet ou internetwork são redes LAN, MAN ou WAN conectadas entre sí. 
+    Internet é a maior das internets, com centenas de milhares de redes interconectadas.
+
+11. Explique como funcionava a interligação entre as máquinas na ARPANET.
+R:  Cada host era ligado a um computador especializado chamado IMP (Interface Message Processor). 
+    Os IMPs eram conectados uns aos outros.
+    A comunicação entre os hosts era usando NCP (Network Control Program)
+
+12. Qual a função dos backbones da Internet e ISP (Internet Service Providers) e qual a relação entre eles?
+R:  Backbones da Internet: Redes de larga escala operadas por organizações, governos ou academias.
+    Os ISPs conectam-se aos backbones e provem acesso a Internet aos usuarios.
+
+13. Explique como funciona o processo de padronização dos protocolos usados na Internet.
+R:  Internet Standard: Especificação formal usada pela Internet.
+    Processo de geração de padrões:
+        Internet draft: Documento inicial com proposta;
+        Request for Comment (RFC): proposta recomendada pelas autoridades da Internet e disponibilizada aos interessados;
+            Niveis de Maturidade: Proposed Standard, Draft Standard, Internet Standard, Historic, Experimental ou Informational;
+            Niveis de Requisito: Required, Recommended, Elective, Limited use e Not recommended;
+
+14. O que é um RFC (Request for Comments)?
+R:  Proposta recomendada pelas autoridades da Internet e disponibilizadas aos interessados.
+
+15. Qual é a função da organização IANA (Internet Assigned Numbers Authority) na Internet?
+R:  Coordena a distribuição de numeros (endereços) e nomes na Internet.
+
+16. Qual o nome do órgão de gestão da Internet no Brasil?
+R:  CGI.br
+
+17. O que é um protocolo de comunicação?
+R:  Conjunto de regras que controlam as comunicações de dados.
+
+18. Explique como funciona o modelo de rede baseado em camadas. Explique como funciona o processo de encapsulamento no envio de mensagens usando este modelo.
+R:  Cada camada tem uma atividade distinta. Tarefas devem ser executadas na ordem correta da hierarquia.
+    Cada camada usa os serviços da camada abaixo e provê serviços para a camada acima.
+    A implementação da camada não é visivel para as outras camadas.
+
+19. Cite as camadas do Modelo OSI do nível inferior ao nível superior e descreva a função de cada camada.
+R:  Obejtivo: permitir que dois sistemas diferentes se comuniquem.
+    1-Física: Coordena as funções necessarias para transportar um fluxo de bits através de um meio físico. Codificação, Modulação;
+    2-Enlace: Transforma a camada física em um link confiavel, empacota os dados;
+    3-Rede: Realiza a entrega de um pacote desde sua origem até seu destino. Endereçamento e roteamento;
+    4-Transporte: Responsavel pela entrega processo a processo de toda a mensagem (processo: programa aplicativo do host);
+    5-Sessão: Controle de dialogo e sincronização entre os sistemas que estão se comunicando;
+    6-Apresentação: Sintaxe e semantica das informações trocadas entre dois sistemas. Tradução, criptografica;
+    7-Aplicação: Provê serviços ao usuario. Serviço de correio eletronica, terminal de rede virtual, transferencia de arquivos;
+
+20. Qual é a diferença entre a entrega da camada de rede e a entrega da camada de transporte?
+R:  A camada de Transporte fornece uma comunicação logica entre entre as aplicações nos hospedeiros (segmentos, dados dos processos).
+    A camada de Rede vai fazer a comunicação entre os hospedeiros (roteamento);
+
+21. Considerando o modelo de referência OSI (Open Systems Interconnection), em quais camadas o Switch e Router atuam?
+R:  Enlace e Rede.
+
+22. Os protocolos TCP e IP possibilitam a troca de informações entre máquinas, em quais camadas do modelo OSI esses protocolos atuam?
+R:  Transporte e Rede.
+
+23. Cite as camadas do Modelo TCP/IP do nível inferior ao nível superior e descreva as funções de cada camada.
+R:  Enlace(Interface de Rede): Corresponde as camadas fisicas e enlace do modelo OSI. 
+        Essa é a parte conhecida como física pois trata-se das tecnologias usadas para as conexões como: Ethernet, Wi-Fi, Modem, etc
+    Rede(Internet): Responsavel pelas conexões entre as redes locais.
+    Transporte: Essa parte controla a comunicação host-a-host.
+    Aplicação: Corresponde as camadas Sessão, Apresentação e Aplicação do modelo OSI. 
+        Essa parte contém todos os protocolos para um serviço específico de comunicação de dados em um nível de processo-a-processo.
+
+24. Cite alguns serviços fornecidos pela camada de aplicação no modelo Internet.
+R:  IP, ICMP, IGMP
+
+25. Apresente as diferenças entre os tipos de endereços usados em cada camada no Modelo TCP/IP.
+R:  Os protocolos TCP/IP utilizam quatro niveis de endereços em uma internet.
+        Endereços físicos (links), endereços logicos (IP), endereços de portas e endereços especificos.
+            Endereços físicos: Definidos pela sua rede física, usado pela camada de enlace;
+            Endereços lógicos: Endereçamento universal para comunicação entre nós de diferentes redes (IP);
+            Endereços de portas: Permite a comunicação entre processos especificos localizados nos nós Emissor e Receptor;
+            Endereços especificos: Algumas aplicações usam endereços especificos para acesso a recursos dentro da aplicação (URL, email@dominio.com, site.dominio.com);
