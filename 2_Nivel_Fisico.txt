@@ -1,0 +1,98 @@
+1. Qual a diferença entre sinal analógico e sinal digital?
+R:  Sinal analógico: possui diversos niveis de intensidade durante um periodo de tempo;
+    Sinal digital: possui um numero limitado de niveis de intensidade durante um periodo de tempo;
+
+2. Qual o nome dado ao sinal analógico periódico mais simples?
+R:  Senoidal;
+
+3. Diferencie amplitude, frequência e fase.
+R:  Amplitude: valor absoluto da intensidade maxima do sinal, proporcional a energia transferida (medido em volts);
+    Periodo (T): Quantidade de tempo em segundos que um sinal precisa para completar 1 ciclo T=1/f;
+    Frequencia (f): Ciclos por segundo f=1/T;
+    Fase: Posição da onda relativa ao tempo 0, medida em graus radianos (360° = 2 PI rad);
+
+4. O que significa comprimento de onda?
+R:  Distancia em que a onda se repete;
+
+5. Apresente um exemplo de sinal analógico periódico usando a representação por domínio de tempo e domínio de frequência.
+R:  Domínio de tempo: relaciona a variação de amplitude da onda ao longo do tempo;
+    Domínio de frequência: relaciona o pico de amplitude da onda com a frequencia;
+
+6. O que significa largura de banda? Qual a sua relação com o conceito de sinal composto?
+R:  Ondas senoidais simples não conseguem carregar informação.
+    Sinal composto - composição de diversas ondas senoidais simples. Carrega informação.
+    Largura de banda: Intervalo de frequencias existentes em um sinal composto.
+
+7. Quantos bits podem ser transmitidos por sinal se forem utilizados 8 níveis no sinal digital?
+R:  log2(8) = 3
+
+8. O que significa taxa de bits (Bit rate) e comprimento de bit (Bit Length)?
+R:  Bit rate: numero de bits enviados em 1 segundo;
+    bit Length: distancia em que 1 bit ocupa no meio de transmissão (equivalente ao comprimento da onda em sinais analogicos);
+
+9. Diferencie a transmissão de sinais digitais usando banda base (Baseband) e banda larga (Broadband).
+R:  Banda base: Sinal digital enviado sem conversão para analogico
+        Utiliza canal do tipo passa-baixa -> canal com largura de banda inicial em zero
+        Transmissão ocupa todo o canal;
+    Banda larga: Utiliza modulação para converter o sinal digital para analogico
+        Utiliza canal do tipo passa-faixa -> canal com largura de banda que não inicia em zero
+        Normalmente ocorre compartilhamento do canal entre transmissões simultaneas que funcionam em diferentes faixas de frequencia;
+
+10. Indique os problemas que podem acontecer na transmissão de dados.
+R:  Atenuação - perda de energia devido a resistencia do meio;
+    Distorção - sinal com formato alterado;
+    Ruído - sinal é corrompido durante a transmissão (ruídos: termico, induzido, impulsivo;
+
+11. Qual a diferença entre os modelos de Nyquist e Shannon para cálculo de capacidade de canal?
+R:  Nyquist -> considera um canal SEM ruido;
+    Shannon -> considera um canal COM ruido;
+
+12. Considere o canal de voz com uma largura de banda de aproximadamente 3 KHz, transmitindo 
+um sinal codificado em 2 níveis de tensão. Como pode ser calculada a taxa máxima de transmissão de dados?
+R:  Nyquist -> BitRate = 2 * bandwidth * log2(L)
+            -> BitRate = 2 * 3000Hz * log2(2)
+            -> BitRate = 6000bps
+
+13. Uma linha telefônica normalmente possui largura de banda de 3000 Hz (300 Hz a 3300 Hz). 
+A razão sinal/ruído de uma linha telefônica boa vale 4095. Para este canal, qual a sua capacidade?
+R:  Shannon -> Capacity = bandwidth x log2(1 + SNR)
+            -> Capacity = 3300 * log2(1+4095)
+            -> Capacity = 39600bps
+
+* 14. Considere um canal sem ruído, transmitindo um sinal em 4 níveis. 
+Como pode ser calculada a taxa máxima de transmissão de dados?
+R:  log2(4) = 2 ?
+
+* 15. Considere um canal com um nível de ruído extremamente alto. Nesse caso, podemos aproximar a razão sinal-ruído do canal 
+para zero. Uma razão sinal-ruído nula indica que, não importa os esforços realizados, é impossível transmitir um sinal de 
+comunicação através desse canal, pois o nível de ruído mascara e destrói completamente a informação que passar pelo meio. 
+Para esse canal, qual é a capacidade do canal?
+R:  0 ?
+
+16. Suponha um canal com largura de banda de 11 MHz e uma razão sinal-ruído de 63. Qual é a capacidade máxima 
+desse canal e o número de níveis de codificação apropriados à transmissão? 
+R:  Shannon -> Capacity = bandwidth x log2(1 + SNR)
+            -> Capacity = 11MHz x log2(1 + SNR)
+            -> Capacity = 11MHz x 6 = 66Mbps
+    Nyquist -> BitRate = 2 * bandwidth * log2(L)
+            -> 66Mb = 2 * 11MHz * log2(L)        
+            -> 3 = log2(L)
+            -> L = 2^3 = 8 niveis
+
+17. Porque a velocidade de transmissão de dados na rede (vazão) não é igual a capacidade de transmissão (largura de banda)?
+R:  Largura de banda - medida de potencial de velocidade do canal
+    Vazão - medida real da velocidade de envio de dados pela rede
+    A vazão é sempre menor que a largura de banda. Ex. Enlace com largura de bande de 1Mbps com vazão de 200kbps
+
+18. Qual a diferença entre largura de banda expressa Hertz e largura de banda expressa em bits por segundo?
+R:  Largura de banda em Hertz: intervalo das frequencias presentes em um sinal composto ou intervalo das frequencias que um sinal permite passar;
+    Largura de banda em bits por segundo: quantidade de bits por segundo que um canal, link ou rede pode transmitir;
+
+19. O que é vazão?
+R:  Medida real da velocidade de envio de dados pela rede;
+
+20. Quais são os componentes para cálculo da latência (atraso)?
+R:  Atraso de transmissão, atraso de propagação, atraso de processamento e atraso de fila.
+    Atraso total = (n+1)(Atrasotr+Atrasopg+Atrasopr) + (n)(Atrasofl)
+
+
