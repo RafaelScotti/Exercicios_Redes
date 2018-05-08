@@ -117,7 +117,41 @@ R:  Elemento de sinal - unidade minima de um sinal digital;
 R:  Grandes conjuntos de 0 ou 1 podem gerar variação na linha de base. 
     Minimizar a largura de banda necessaria e eliminar componentes de corrente direta.
 
+26. Qual é a importância da sincronização na transmissão digital? Como isso pode ser tratado?
+R:  A falta de sincronização resulta em erros de interpretação.
+    O sinal deve incluir informações de tempo para permitir a auto-sincronização do receptor.
+
+27. Qual a diferença entre NRZ unipolar e polar?
+R:  Unipolar - usa somente uma polaridade (0 _ 1 -)
+    Polar - usa dois niveis de voltagem, um positivo e outro negativo.
+
+28. Apresente como seria a transmissão dos bits 01100101 usando as codificações NRZ-L, NRZ-I, Manchester, Manchester Diferencial e MLT-3.
+R:               
+NRZ-L    
+0   1   1   0   0   1   0   1
 
 
 
+NRZ-I    
+0   1   1   0   0   1   0   1
 
+
+
+Manchester  
+0   1   1   0   0   1   0   1
+
+
+
+Manchester
+Diferencial   
+0   1   1   0   0   1   0   1
+
+
+
+MLT-3       
+0   1   1   0   0   1   0   1
+
+
+
+29. Como funciona a codificação multinível? Quais são os seus objetivos?
+R:
