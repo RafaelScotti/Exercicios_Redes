@@ -148,3 +148,4 @@ R:  Os protocolos TCP/IP utilizam quatro niveis de endereços em uma internet.
             Endereços lógicos: Endereçamento universal para comunicação entre nós de diferentes redes (IP);
             Endereços de portas: Permite a comunicação entre processos especificos localizados nos nós Emissor e Receptor;
             Endereços especificos: Algumas aplicações usam endereços especificos para acesso a recursos dentro da aplicação (URL, email@dominio.com, site.dominio.com);
+            
