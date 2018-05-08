@@ -160,4 +160,9 @@ R:  Utiliza multiplos niveis de sinal. Pode representar mais bits por sinal.
     Detectar erros na transmissão de dados;
 
 30. Qual a função da codificação de bloco? Como é realizada a sua implementação?
+R:  Converte um bloco de m bits em um bloco de n bits onde n > m (mB/nB);
+    Inclui redundancia para garantir sincronização e detectar erros;
+            divisão -> substituição -> combinação
 
+31. Explique como funciona a técnica PCM. Apresente um exemplo.
+R:  
