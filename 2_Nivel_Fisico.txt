@@ -154,4 +154,10 @@ MLT-3
 
 
 29. Como funciona a codificação multinível? Quais são os seus objetivos?
-R:
+R:  Utiliza multiplos niveis de sinal. Pode representar mais bits por sinal.
+    Prevenir a ocorrencia de variação da linha base;
+    Prover sincronização;
+    Detectar erros na transmissão de dados;
+
+30. Qual a função da codificação de bloco? Como é realizada a sua implementação?
+
