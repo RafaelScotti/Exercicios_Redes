@@ -95,4 +95,29 @@ R:  Medida real da velocidade de envio de dados pela rede;
 R:  Atraso de transmissão, atraso de propagação, atraso de processamento e atraso de fila.
     Atraso total = (n+1)(Atrasotr+Atrasopg+Atrasopr) + (n)(Atrasofl)
 
+21. O que significa jitter? Que tipo de aplicação sofre mais com alto jitter?
+R:  Variação do atraso de diversos pacotes trocados entre emissor e receptor;
+    Audio e video em tempo real;
+
+22. Quais são os motivos que podem levar ao descarte de um pacote?
+R:  Congestionamento
+
+CODIFICAÇÃO E MODULAÇÃO
+
+23. Qual a diferença entre codificação e modulação?
+R:  Codificação transforma dados em sinais digitais;
+    Modulação transforma dados em sinais analógicos
+
+24. Qual a relação existente entre elemento de sinal e elemento de dado na transmissão digital?
+R:  Elemento de sinal - unidade minima de um sinal digital;
+    Elemento de dado  - unicade minima de um dado digital;
+    Taxa r ->  numero de elemento de dados por elemento de sinal.
+
+25. O que significa o problema da variação da linha de base na transmissão digital? Como a codificação pode tratar esse problema?
+R:  Grandes conjuntos de 0 ou 1 podem gerar variação na linha de base. 
+    Minimizar a largura de banda necessaria e eliminar componentes de corrente direta.
+
+
+
+
 
