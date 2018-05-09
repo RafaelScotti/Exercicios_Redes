@@ -186,9 +186,27 @@ R:  1-persistent: Assim que a linha fica ociosa, a estação transmite o seu fra
             Reduz a chance de colisão e aumenta eficiencia;
 
 21. Como funciona a técnica CSMA/CD para acesso ao meio? Por que é necessário a definição de tamanho mínimo de frame?
-22. Explique como acontece a detecção de uma colisão no meio guiado.
-23. Como funciona a técnica CSMA/CA para acesso ao meio? Em qual cenário ela é utilizada? Por que o CSMA/CD não é utilizado neste cenário?
-24. Apresente como funcionam as técnicas de acesso controlado: Reservation, Polling e Token Passing.
+R:  Estação monitora continuamente o meio transmissão após ela transmitir um frame para verificar se a transmissão foi bem sucedida.
+    Se não houver colisão até o final do envio, entao a transmissão é bem sucedida.
+    Se houver colisão durante a transmissão, interrompe o envio e retransmite frame;
+    É necessario utilizar tamanho minimo de frame para garantir que a estação transmissora consiga detectar colisão;
 
+22. Explique como acontece a detecção de uma colisão no meio guiado.
+R:  Se mais de uma estação tentar transmitir ao msm tempo, ocorre um conflito no acesso (colisão) que resulta em frames destruidos ou modificados;
+    O nivel de energia fica o dobro do nivel normal
+
+23. Como funciona a técnica CSMA/CA para acesso ao meio? Em qual cenário ela é utilizada? Por que o CSMA/CD não é utilizado neste cenário?
+R:  Escuta o meio continuamente, o IFS aguarda pelo possivel inicio de uma transmissão de outra estação mais distante,
+    Se continuar ocioso msm depois do IFS, então ela (janela de contenção) aguarda um numero de slots randomicos antes de transmitir, senão volta pro inicio do processo;
+    É utilizada para meios de comunicação sem fio;
+    O CSMA/CD não é utilizado pq...?
+
+24. Apresente como funcionam as técnicas de acesso controlado: Reservation, Polling e Token Passing.
+R:  Reservation: Estação precisa fazer reserva antes de enviar dados; Tempo dividido em intervalor;
+    Polling: Um dispositivo é designado como estação primaria e os demais como estações secundarias;
+            Todas as trocas de dados acontecem por intermedio da estação primaria;
+    Token Passing: Estações são organizadas em um anel logico, cada estação tem um sucessor e um antecessor.
+            Direito de acesso ao canal (de forma exclusiva) é passado de estação para estação;
+            Uso de token da direito a estação para acessar o canal e enviar dados (se desejar), quando termina, o token é passado para o sucessor;
 
 
