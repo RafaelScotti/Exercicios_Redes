@@ -2,27 +2,193 @@
 R:  Enquadramento, endereçamento, controle de fluxo, controle de erros, Controle de acesso ao meio de transmissão;
 
 2. Como funcionam as técnicas byte stuffing e bit stuffing para enquadramento? Apresente exemplos.
-R:  Bit Stuffing: Se forem encontrados 5 bits 1 consecutivos, insere-se um 0. Este sera eliminado no receptor;
-    
+R:  Byte Stuffing : "Flag" - separa inicio do fim da mensagem. Se encontrar um Flag como dado, é um problema.
+    para resolver isso insere-se um byte especial "ESC" e o que tiver depois, sera interpretado como dado
+    (Flag|cabeçalho|---ESC|Flag|----ESC|ESC---|Trailer|Flag)
+    Quando passar pelo receptor, ele sabera q deve tratar Flag e ESC como dado;
+
+    Bit Stuffing: O flag dessa tecnica é inserir 01111110 no inicio e fim do quadro. 
+    Para tratar o mesmo problema que a tecnica anterior e tratar isso como dado, deve-se inserir um 0
+    sempre que for encontrado 5bits 1 consecutivos. Este sera eliminado pelo receptor;
+
 3. Apresente como seria o envio dos seguintes conjuntos de bits utilizando a técnica de enquadramento usando bit-stuffing: 
 a) 010101100011; b) 111110001100; c) 101011010001; d) 011111111110; e) 101011111001.
+R:  A) 010101100011
+
+
+    B) 111110001100
+
+
+    C) 101011010001
+
+
+    D) 011111111110
+
+
+    E) 101011111001
+
 
 
 4. Diferencie as técnicas stop-and-wait ARQ, go-back-n ARQ e selective-repeat ARQ para controle de fluxo. 
 Apresente um exemplo de transmissão de 5 quadros ressaltando as características de cada técnica.
-
+R:  Stop-and-wait ARQ - Frame de dados inclui bits de redundância para verificação de integridade;
+                      - Se tiver corrompido, então é descartado (sem retorno de Ack)
+                      - Usa somente 1bit (0,1);
+                      - é ineficiente se o canal tiver ampla largura de banda;
+    Go-back-n ARQ - Permite o envio de mais frames antes de receber uma confirmação        
+                  - Frames enviados mas não confirmados são mantidos armazenados no emissor para possivel retransmissão;
+                  - Usa janela deslisante;
+                  - Ack é enviado se frame chegar intacto e na ordem esperada, caso contrario é descartado (sem envio de Ack);
+                  - se o receptor não receber o Ack, quando der timeOut ele volta para o n elemento solicidato e reenvia todos apartir dele;
+                  - Faz retransmissões desnecessarias;
+    Selective-repeat ARQ - Em caso de corrupção de frame, reencia somente o frame corrompido
+                         - Uso de NAK para indicar frame não recebido, ou recebido com erro;
+                         - Receptor aceita receber frames fora de ordem;
 
 5. Qual a função da janela deslizante nas técnicas de controle de fluxo?
-
+R:  Definir um intervalo dos numeros de sequencia gerenciados no emissor e receptor;
 
 6. Qual a vantagem do uso da técnica de confirmação acumulativa?
-
+R:  Diminuir overhead no canal;
 
 7. Considere que a estação A deseja enviar 10 quadros para a estação B utilizando a técnica go-back-n ARQ e janela com tamanho 3. 
 Apresente como fica a transmissão dos quadros supondo que nas tentativas 2, 5 e 7 de envio ocorre uma falha.
+R:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 8. Apresenta como fica a transmissão do exercício anterior se forem utilizadas as técnicas stop-and-wait ARQ e selective-repeat ARQ.
+R:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 9. Como funciona a técnica de piggybacking? Qual a vantagem do uso dessa técnica?
+R:  Informações de controle são inseridas juntamente com dados ao invés de usarem quadros separados.
+    Aumenta a eficiencia no uso do canal;
+
 10. Como funciona a técnica de redundância de caracter? Apresente um exemplo mostrando a sua utilização.
+R:  Insere um bit de paridade par ou impar no final de cada caracter (7bits);
+    0110100
+    01101001 -paridade par
+    01101000 -paridade impar
+
 11. Como funciona a técnica de redundância de bloco? Apresente um exemplo mostrando a sua utilização.
+R:  Um bit de paridade é adicionado a cada caracter e então um BCC de 7 bits é adicionado no final;
+    1110010 1100101 1100100 1100101 1110011 0110001 (fazer tabela, pag 7/13)
+      Bit 1 2 3 4 5 6 BCC
+      b1  1 1 1 1 1 0  1
+      b2  1 1 1 1 1 1  0
+      b3  1 0 0 0 1 1  1
+      b4  0 0 0 0 0 0  0
+      b5  0 1 1 1 1 0  0
+      b6  1 0 0 0 1 0  0
+      b7  0 1 0 1 1 1  0
+paridade  0 0 1 0 0 1  0
+
+12. Como funciona a técnica de códigos polinomiais (CRC)? Apresente um exemplo mostrando a sua utilização.
+R:  Baseia-se em tratar os bits de uma mensagem como coeficientes binarios de um polinomio variavel X qualquer.
+        mensagem
+        x^9+x^7+x^3+x^2+x^0 -> 1 0 1 0 0 0 1 1 0 1
+
+        polinomio gerador
+        110101 -> x^5+x^4+x^2+x^0
+
+13. Calcule o CRC para a mensagem 10110101011 usando o polinômio x^4 + x^2 + 1.
+R:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14. Apresente a mensagem 1010100 codificada usando o Código de Hamming.
+R:    
+
+
+
+
+
+
+
+15. Quais são os nomes das subcamadas definidas pela IEEE para subdividir a camada de enlace?
+R:  Controle de enlace de dados - controle de fluxo e controle de erros;
+    Controle de acesso multiplo - coordena o acesso a meios fisicos compartilhados;
+    A IEEE utiliza a mesma subdivisão para LANs 
+        LLC - logical link control;
+        MAC - media access control;
+
+16. Qual a diferença entre acesso randômico e acesso controlado?
+R:  Acesso randomico: Nenhuma estação é superior a outra ou exerce controle sobre outra;
+                      Qualquer estação pode enviar dados quando desejar, usando o procedimento definido pelo protocolo;
+    Acesso controlado: Estações fazem uma consulta entre si para saber qual tem autorização para transmitir;
+
+17. Descreva o funcionamento da técnica Aloha para acesso ao meio.
+R:  Meio é compartilhado por diversas estações;
+    Quando uma estação envia dados, outra estação pode tentar enviar ao mesmo tempo -> Gera colisão e os dados ficam corrompidos;
+
+18. Apresente as diferenças entre as técnicas Aloha Pura e Slotted Aloha. Qual o tempo de vulnerabilidade para cada técnica?
+R:  ALOHA Pura: Cada estação envia um frame quando quiser enviar e guarda uma confirmação do receptor;
+        Se a confirmação não chegar após o time-out, considera-se que houve uma colisão no frame (ou na confirmação). e o frame é reenviado;
+        Colisão pode envolver duas ou mais estações:
+            Se estações tentarem reenviar após o time-out, acontecerá uma nova colisão;
+        Tempo de vulnerabilidade: 2 x Tfr
+    Slotted ALOHA: Divide o tempo em slots de T fr segundos;
+        Estações podem transmitir somente no inicio do slots;
+        Tempo de vulnerabilidade: Tfr
+
+19. Qual a diferença entre a técnica Aloha Pura e a técnica CSMA para acesso ao meio?
+R:  Tecnica CSMA: Cada estação deve "escutar" o meio antes de transmitir;
+    ALOHA Pura: Cada estação envia um frame quando quiser enviar e guarda uma confirmação do receptor;
+
+20. Explique como funcionam os métodos de persistência 1-persistent, nonpersistent e P-persistent.
+R:  1-persistent: Assim que a linha fica ociosa, a estação transmite o seu frame. Maior chance de colisão;
+    Nonpersistent: Estação "escuta" a linha e se estiver ocioso, então manda o frame;
+            Senão, aguarda tempo randômico e tenta "escutar" a linha novamente;
+            Reduz chance de colisão porem também reduz eficiencia da rede;
+    P-persistent: Utiliza time slots com duração igual ou maior que o tempo maximo de propagação;
+            Trabalha com probabilidade de envio ou espera;
+            Reduz a chance de colisão e aumenta eficiencia;
+
+21. Como funciona a técnica CSMA/CD para acesso ao meio? Por que é necessário a definição de tamanho mínimo de frame?
+22. Explique como acontece a detecção de uma colisão no meio guiado.
+23. Como funciona a técnica CSMA/CA para acesso ao meio? Em qual cenário ela é utilizada? Por que o CSMA/CD não é utilizado neste cenário?
+24. Apresente como funcionam as técnicas de acesso controlado: Reservation, Polling e Token Passing.
+
+
+
