@@ -1,0 +1,28 @@
+1. Quais são as funções do nível de enlace?
+R:  Enquadramento, endereçamento, controle de fluxo, controle de erros, Controle de acesso ao meio de transmissão;
+
+2. Como funcionam as técnicas byte stuffing e bit stuffing para enquadramento? Apresente exemplos.
+R:  Bit Stuffing: Se forem encontrados 5 bits 1 consecutivos, insere-se um 0. Este sera eliminado no receptor;
+    
+3. Apresente como seria o envio dos seguintes conjuntos de bits utilizando a técnica de enquadramento usando bit-stuffing: 
+a) 010101100011; b) 111110001100; c) 101011010001; d) 011111111110; e) 101011111001.
+
+
+4. Diferencie as técnicas stop-and-wait ARQ, go-back-n ARQ e selective-repeat ARQ para controle de fluxo. 
+Apresente um exemplo de transmissão de 5 quadros ressaltando as características de cada técnica.
+
+
+5. Qual a função da janela deslizante nas técnicas de controle de fluxo?
+
+
+6. Qual a vantagem do uso da técnica de confirmação acumulativa?
+
+
+7. Considere que a estação A deseja enviar 10 quadros para a estação B utilizando a técnica go-back-n ARQ e janela com tamanho 3. 
+Apresente como fica a transmissão dos quadros supondo que nas tentativas 2, 5 e 7 de envio ocorre uma falha.
+
+
+8. Apresenta como fica a transmissão do exercício anterior se forem utilizadas as técnicas stop-and-wait ARQ e selective-repeat ARQ.
+9. Como funciona a técnica de piggybacking? Qual a vantagem do uso dessa técnica?
+10. Como funciona a técnica de redundância de caracter? Apresente um exemplo mostrando a sua utilização.
+11. Como funciona a técnica de redundância de bloco? Apresente um exemplo mostrando a sua utilização.
