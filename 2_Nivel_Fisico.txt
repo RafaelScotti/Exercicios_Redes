@@ -165,4 +165,158 @@ R:  Converte um bloco de m bits em um bloco de n bits onde n > m (mB/nB);
             divisão -> substituição -> combinação
 
 31. Explique como funciona a técnica PCM. Apresente um exemplo.
-R:  
+R:  A partir do sinal analogico, gera-se um grafico de "voltagens" (pulsos PAM), cada valor (pulso PCM) é convertido para um binario.
+
+
+
+
+
+32. Apresente como seria a transmissão dos bits 01100101 usando as técnicas de modulação FSK, ASK e PSK.
+R:      0   1   1   0   0   1   0   1
+FSK
+______________________________________
+R:      0   1   1   0   0   1   0   1
+ASK
+______________________________________
+R:      0   1   1   0   0   1   0   1
+PSK
+______________________________________
+
+33. Como funciona a técnica de modulação QAM?
+R:  Quadrature Amplitude Modulation. Combina ASK e PSK mantendo sua frequencia constante.
+    Tem-se uma constelação de pontos de modulação possiveis.
+
+34. Considere a seguinte codificação para os conjuntos de bits: 00 (A=1, P=0 graus), 01 (A=2, P=90 graus), 
+10 (A=2, P=180 graus), 11 (A=1, P=270 graus). Apresente o diagrama de constelação respectivo.
+R:       
+         01
+         |
+   -10---|-00---
+         11
+         |
+         
+35. Apresente como seria a transmissão dos bits 01100011 usando a técnica QAM e o diagrama de 
+constelação construído na questão anterior.
+R:
+    0     1     1     0     0     0     1     1
+    
+
+
+36. Descreva como funcionam as técnicas AM, FM e PM para modulação analógico-analógico.
+R:  Necessario quando o meio é passa-faixa(não inicia em zero) exemplo: canais de radio.
+    AM: A portadora é modulada para acompanhar as mudanças de amplitude do sinal;
+        (Frequencia e fase permanecem as mesmas)
+    FM: A frequencia da portadora é modulada para seguir as mudanças de nivel de voltagem(amplitude) do sinal modulado;
+        (Amplitude de pico e fase permanecem constantes)
+    PM: A Fase da portadora é modulada para acompanhar a mudança de nivel de voltagem (amplitude) do sinal modulado;
+        (Amplitude de pico e frequencia permanecem constantes)
+
+37. Para que serve a multiplexação da comunicação de dados?
+R:  Serve para permitir a transmissão simultanea de varios sinais por meio de um unico link de dados;
+
+38. Como funciona a multiplexação FDM? Quais são as etapas para enviar um sinal multiplexado em um certa frequência?
+R:  FDM (Multiplexação por divisão de frequencia) - Utilizada quando a largura de banda de um link for maior que a largura de
+banda combinada do conjunto de sinais a serem transmitidos.
+    A banda passante é dividida em varios canais de comunicação, em faixas de frequencias distintas;
+    Cada um desses canais pode ser usado como se fosse uma linha separada;
+    Etapas:
+        Passar um filtro no sinal de forma a preservar somente a faixa relativa a banda passante necessaria a cada um deles;
+        Deslocar a faixa de frequencia desse sinal para a faixa de frequencia da sua transmissão;
+        Na recepção deve-se novamente deslocar o sinal da frequencia de transmissão para a sua frequencia original;
+        Novamente passa-se um filtro para conter somente o sinal original;
+
+39. O que significa Hierarquia Analógica?
+R:  Ex: cria-se um FDM com 12 canais de voz a uma frequencia de 4kHz cada, totalizando 48kHz. 
+    Após, cria-se outro FDM com varios grupos de 48kHz. Assim por diante até formar um grupo enorme de canais de voz chamado Grupo Jumbo..
+
+40. Como funciona a multiplexação WDM?
+R:  Multiplexação por Divisão de comprimento de onda (usado em sinais opticos);
+    Combinação e separação das fontes de luz usando um prisma;
+        Inclina o feixe de luz baseado no angulo de incidencia e frequencia;
+
+41. Como funciona a multiplexação TDM? Qual a diferença entre TDM síncrona e assíncrona (estatística)?
+R:  Multiplexação por divisão de tempo;
+    usado em sinais digitais;
+    Intercala os bits que fluem das linhas de baixa velocidade, dentro da linha de maior velocidade.
+    TDM Sincrona - Cada conexão de entrada aloca uma porção fixa do tempo de saída, mesmo que não esteja transmitindo dados.
+                 - Dominio do tempo é dividido em intervalos de tamanho fixo T chamados frames.
+    TDM Assincrona - Parcelas de tempo são alocadas dinamicamente de acordo com a demanda das estações 
+
+42. O que significa Hierarquia Digital?
+R:  O sinal digital é obtido pela multiplexação TDM de vários sinais digitais que tem a mesma taxa nominal de transmissão de bits. 
+
+43. Explique como funciona o uso de uma linha T1 para mutiplexação de linhas telefônicas.
+R:  24 canais de voz transmitindo a 4kHz uma taxa de 64000bps (64kbps). A linha T1 de 1544Mbps é igual a 24x64kbps+8kbps de overhead
+
+44. Qual é a diferença de espalhamento espectral e multiplexação?
+R:  Privacidade e imunidade a interferencias.
+
+45. Explique como funciona a técnica FHSS. Por que ela é considerada segura contra intrusos?
+R:  Utiliza saltos de frequencia. Utiliza um codigo pseudoaleatorio que gera um valor para indexar uma tabela de frequencias.
+    A frequencia é passada para o sintetizador de frequencias;
+    O sintetizador cria um sinal de portadora nessa frequencia e o sinal da fonte modula o sinal da portadora;
+    O intruso precisa conhecer a ordem das frequencias para conseguir capturar a transmissão.
+
+46. Explique como funciona a técnica DSSS.
+R:  Cada bit de dados é substituido por um codigo de espalhamento de n bits (chips);
+    (taxa de chips é n vezes a taxa de bits)
+
+47. Diferencie os meios de transmissão guiados: cabo coaxial, par trançado e fibra ótica.
+R:  Par-trançado - Formado por dois condutores, um dos fios transporta sinais eletricos e o outro é como terra de referencia.
+                    - o trançado é para diminuir o impacto de ruidos externos (ambos os fios são afetados da mesma forma) 
+    Coaxial - Transporta sinais em frequencias mais altas que o par trançado.
+                Apresenta um nucleo condutor central envolto em um revestimento isolante.
+    fibra ótica - transmite sinais em forma de luz.
+
+48. Qual a diferença entre cabos UTP e STP? Qual deles é menos suscetível a ruídos? Pq?
+R:  UTP - Não blindado;
+    STP - Blindado, possui malha metalica;
+    O cabo STP é menos suscetível a rui devido a sua blindagem.
+
+49. Qual é o nome dado para os conectores usados na Ethernet fina? Qual a função do terminador?
+R:  BNC. Impedir a reflexão do sinal.
+
+50. Diferencie os tipos de fibra multimodo com índice degrau, multimodo com índice gradual e monomodo.
+R:  Multimodo: multiplos fluxos de uma fonte de luz se deslocam ao longo do nucleo usando caminhos diferentes;
+        Indice degrau: A densidade do nucleo permanece constante do centro para as bordas;
+                O fluxo de luz se desloca por essa densidade constante em linha reta até atingir a interface do nucleo e a casca
+        Indice gradual: A Distorção do sinal é diminuida através do cabo através da variação da densidade;
+                A densidade é mais alta no centro do nucleo e diminui gradualmente em sua borda;
+    Monomodo: Utiliza fibras de Indice degrau e uma fonte de luz extremamente focalizada que limita os fluxos a um pequeno intervalo de angulos, todos proximos da horizontal;
+            É fablicada com um diametro de nucleo muito menos que a da fibra multimodo;
+
+51. Apresente as vantagens e desvantagens de fibras óticas em relação aos outros meios de transmissão guiados.
+R:  Vantagens: Imunidade a interferencia eletromagnetica;
+               Largura de banda mais ampla -> maiores velocidades;
+               Resistencia a materias corrosivos;
+               Menor Atenuação de sinal;
+    Desvantagens: Instalação e manutenção;
+                  Custos;
+                  Propagação unidirecional da luz;
+
+52. Qual a diferença entre comunicação direcional e comunicação omnidirecional?
+R:  Direcional: visualização direta;
+    Omnidirecional: Sinal espalha-se em todas as direções podendo ser recebido por muitas antenas;
+
+53. Descreva como funciona os métodos de propagação no solo, ionosférica e direcional.
+R:  Terrestre: Sinal de baixa frequencia, viaja proximo a terra e é enviado em todas as direções;
+    Ionosférica: Ondas de rádio de alta frequencia são refletidas pela ionosfera;
+    Direcional(Linha de visada): Sinais de frequencia muito alta são transmitidos diretamente de antena para antena. Devem estar direcionadas uma para a outra; 
+
+54. Diferencie os meios de transmissão não-guiados: rádio, microondas e infravermelho.
+R:  Radio: 3kHz - 1GHz, Omnidirecional, grandes distancias; (Radios, TV)
+    Microondas: 1GHz - 300GHz, Direcional, Necessario alinhamento de antenas e repetidores para maiores distancias; (Celulares)
+    Infravermelho: 300GHz - 400THz, Curto alcance e unidirecional (Controle remoto)
+
+55. Por que são utilizados os satélites na comunicação de dados?
+R:  Para enviar informações a longa distancias, Televisão, Redes privadas, Telefonia de longa distancia;
+
+56. Quais são as diferenças entre satélites geoestacionários e não-geoestacionários?
+R:  Geoestacionarios: tem um periodo de rotação igual o da terra;
+                      as estações terrestres utilizam antenas fixas;
+    Não-Geoestacionarios: velocidade de rotação é diferente da velocidade de rotação da terra;
+                          as estações terrestres utilizam antenas moveis; custos de operação maior.
+
+57. Apresente os problemas e vantagens na utilização de comunicação por infravermelho.
+R:  Vantagens: Segurança, não gera interferencia entre redes em salas diferentes;
+    Problemas: Não atravessa objetos opacos, Interferencia de luz fluorescente, Espectro compartilhado com a luz do sol; 
