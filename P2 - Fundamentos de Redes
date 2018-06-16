@@ -1,0 +1,56 @@
+01. Descreva como é organizado o nível de enlace pela IEEE e qual o motivo desta divisão?
+R:  
+
+02. Quais são as características da tecnologia Ethernet?
+
+03. Qual a topologia lógica utilizada pela Ethernet padrão?
+
+04. Explique a utilização e funcionamento do algoritmo binário exponencial de backoff do Ethernet.
+
+05. Explique como é realizado o endereçamento das máquinas usando a tecnologia Ethernet. Diferencie os endereços unicast, multicast e broadcast.
+
+06. Qual a função do campo tamanho/tipo no quadro Ethernet?
+
+07. Explique a mudança no CSMA/CD no padrão Gigabit Ethernet e qual técnica pode ser empregada para tratar o problema de desempenho decorrente.
+
+08. Apresente as diferenças entre redes sem fio com infraestrutura e redes sem fio ad hoc.
+
+09. Qual a diferença entre os modos de operação DCF e PCF?
+
+10. Como funciona o mecanismo CSMA/CA?
+
+11. Qual a função do NAV (Network Allocation Vector)?
+
+12. Como funciona o modo de operação PCF?
+
+13. É possível a coexistência entre DCF e PCF? Como isso é implementado?
+
+14. Explique os problemas da estação escondida (hidden station) e da estação exposta (exposed station). Apresente um exemplo para cada tipo de problema.
+
+15. Explique como funcionam os repetidores. Qual o nível em que eles operam?
+
+16. Explique como funcionam os hubs. Qual o nível em que eles operam?
+
+17. Qual a diferença entre pontes (bridges) e repetidores? Em que nível as pontes funcionam?
+
+18. Como funciona uma ponte? Explique o processo de construção da tabela de encaminhamento de pacotes.
+
+19. Quais são as vantagens e desvantagens do uso de pontes?
+
+20. Quais são as dificuldades da interligação de redes locais com níveis de enlace heterogêneos?
+
+21. Quais são as vantagens dos switches em relação as bridges e hubs?
+
+22. Apresente as diferenças entre switches cut-through e switches store and forward.
+
+23. O que significa domínio de colisão e domínio de broadcast? Apresente estes domínios em um hub e em um switch half-duplex.
+
+24. Qual a diferença de um switch half-duplex e um swith full-duplex em relação ao domínio de colisão?
+
+25. Qual a função das VLANs? Como elas funcionam?
+
+26. Qual a função do roteador? Em que nível ele trabalha? Como ele funciona?
+
+27. Quais são as diferenças entre um switch e um roteador?
+
+28. Apresente como ficam os domínios de colisão e broadcast quando se utiliza um roteador para interligar redes distintas.
